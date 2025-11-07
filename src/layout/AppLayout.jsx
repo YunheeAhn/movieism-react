@@ -1,12 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router";
+import logo from "../assets/logo.png";
 
 const AppLayout = () => {
   return (
     <div className="wrapper">
       <div className="header">
         <div className="logo">
-          <img src="" alt="" />
+          <img src={logo} alt="MOVIEISM" />
         </div>
 
         <ul className="menus">
@@ -19,8 +20,8 @@ const AppLayout = () => {
         </ul>
 
         <div className="search">
-          <input type="text" />
-          <button>검색</button>
+          <input type="text" placeholder="Search" />
+          <button>Search</button>
         </div>
       </div>
       <div className="main">
