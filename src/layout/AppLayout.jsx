@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 
 const AppLayout = () => {
   return (
-    <div className="wrap">
+    <div className="wrapper">
       <div className="header">
         <div className="logo">
           <img src="" alt="" />
