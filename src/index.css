@@ -147,11 +147,11 @@ html {
   color: var(--basic);
   font-weight: 400;
   line-height: 170%;
-  font-family: var(--kor);
+  font-family: var(--eng);
   word-break: keep-all;
 }
 * {
-  font-family: var(--kor);
+  font-family: var(--eng);
   word-break: keep-all;
 }
 body {
