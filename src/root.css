@@ -26,6 +26,11 @@
   --orange: #de7300;
   --green: #00973f;
 
+  --borderR5: 5px;
+  --borderR10: 10px;
+  --borderR15: 15px;
+  --borderR20: 20px;
+
   /* 폰트 */
   --kor: "Pretendard Variable", "Roboto", Malgun Gothic, "Malgun Gothic", sans-serif;
   --eng: "Roboto", "Pretendard Variable", Malgun Gothic, "Malgun Gothic", sans-serif;
