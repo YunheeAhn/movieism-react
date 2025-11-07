@@ -7,22 +7,28 @@ const Banner = () => {
   console.log(data);
 
   if (isLoading) {
-    <h1>Loading...</h1>;
+    <h1 className="message">Loading...</h1>;
   }
 
   if (isError) {
-    <h1>error.message</h1>;
+    <h1 className="message">error.message</h1>;
   }
+
   return (
-    <div
-      style={{
-        backgroundImage:
-          "url(" +
-          `https://media.themoviedb.org/t/p/w533_and_h300_bestv2${data.results[0].poster_path}` +
-          ")",
-      }}
-    >
-      <div>Banner</div>
+    <div className="banner">
+      <div
+        className="banner-img"
+        style={{
+          backgroundImage:
+            "url(" +
+            `https://media.themoviedb.org/t/p/w533_and_h300_bestv2${data?.results[0].poster_path}` +
+            ")",
+        }}
+      ></div>
+      <div className="banner-text">
+        <h2>{data?.results[0].title}</h2>
+        <p>{data?.results[0].overview}</p>
+      </div>
     </div>
   );
 };
