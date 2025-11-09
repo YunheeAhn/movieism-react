@@ -1,6 +1,8 @@
 import React from "react";
 
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+
 import MovieCard from "../MovieCard/MovieCard";
 import { useUpcomingMoviesQuery } from "../../../../hooks/useUpcomminMovies";
 
