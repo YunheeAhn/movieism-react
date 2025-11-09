@@ -3,7 +3,7 @@ import React from "react";
 const MovieCard = ({ movie }) => {
   const posterImage = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`;
   return (
-    <dl>
+    <dl className="card">
       <dt>
         <img src={posterImage} alt={movie.title} />
       </dt>
@@ -17,7 +17,7 @@ const MovieCard = ({ movie }) => {
 
         <p className="average">{movie.vote_average}</p>
         <p className="popularity">{movie.popularity}</p>
-        <p className="adult">{movie.adult ? "over18" : "under18"}</p>
+        <p className="adult">{movie.adult ? "18+" : "18-"}</p>
       </dd>
     </dl>
   );
