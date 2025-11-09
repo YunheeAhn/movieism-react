@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 
 import Slider from "react-slick";
@@ -6,10 +6,13 @@ import MovieCard from "../MovieCard/MovieCard";
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    window.dispatchEvent(new Event("resize"));
-  }, [data]);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;
@@ -38,7 +41,7 @@ const PopularMovieSlide = () => {
       <h3 className="slide-title">Popular Movies</h3>
 
       <div className="slider-container">
-        <Slider {...settings} className="popular-movie-roll">
+        <Slider key={windowWidth} {...settings} className="popular-movie-roll">
           {data.results.map((movie, index) => (
             <MovieCard movie={movie} key={index} />
           ))}
