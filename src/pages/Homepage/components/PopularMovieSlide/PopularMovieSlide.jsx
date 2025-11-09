@@ -27,7 +27,7 @@ const PopularMovieSlide = () => {
   };
   return (
     <div className="slide-section">
-      <h3>Popular Movies</h3>
+      <h3 className="slide-title">Popular Movies</h3>
 
       <div className="slider-container">
         <Slider {...settings} className="popular-movie-roll">
