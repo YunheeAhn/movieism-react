@@ -43,9 +43,9 @@ const AppLayout = () => {
           <button>Search</button>
         </div>
       </div>
-      <div className="main">
+      <section className="main">
         <Outlet />
-      </div>
+      </section>
     </div>
   );
 };
