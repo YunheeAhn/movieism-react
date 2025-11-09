@@ -132,3 +132,30 @@
   background: var(--white);
   color: var(--main);
 }
+
+/*******************************************************************************
+    @media 980px
+*******************************************************************************/
+@media (max-width: 980px) {
+  .banner dd {
+    top: 40%;
+  }
+  .banner dd h2 {
+    font-size: 4rem;
+
+    margin-bottom: 16px;
+  }
+  .banner dd p {
+    font-size: 1.2rem;
+  }
+
+  /* 배너 화살표 */
+  .visual .slick-next {
+    left: calc(5% + 60px);
+  }
+  .visual .slick-arrow:after {
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
