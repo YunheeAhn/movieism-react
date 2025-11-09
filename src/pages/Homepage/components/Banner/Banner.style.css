@@ -1,11 +1,16 @@
 /* 변수 */
 @import url("/src/index.css");
 
+.visual {
+  width: 100%;
+  height: 100vh;
+}
+
 .banner {
   width: 100%;
-  height: 800px;
-
+  height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 .banner:before {
   content: "";
@@ -17,28 +22,42 @@
   top: 0;
   right: 0;
   bottom: 0;
+
   background: linear-gradient(to top, var(--black), transparent);
 }
-.banner .banner-img {
-  display: block;
-  background-size: cover;
-  background-position: center;
+.banner dt {
+  width: 100vw;
+  height: 100%;
+  position: relative;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background: black;
+}
+
+.banner dt img {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+
+  aspect-ratio: 533/300;
+  transform: scale(1.15);
+  transition: all 1.2s ease;
 }
-.banner .banner-text {
+.banner dd {
   width: 90%;
   margin-top: auto;
 
   position: absolute;
   left: 5%;
-  bottom: 80px;
+  top: 40%;
   z-index: 2;
 
   letter-spacing: 0;
 }
-.banner .banner-text h2 {
+.banner dd h2 {
   color: var(--white);
   font-family: var(--kor);
   font-size: 4.8rem;
@@ -46,9 +65,70 @@
   font-weight: 900;
 
   margin-bottom: 20px;
+
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 1.2s ease;
 }
-.banner .banner-text p {
+.banner dd p {
   color: var(--white);
   font-size: 1.4rem;
   letter-spacing: 0;
+
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 1.2s ease;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* 배너 효과 */
+.visual .slick-current dt img {
+  transform: scale(1);
+}
+.visual .slick-current dd h2 {
+  transform: translateY(0);
+  opacity: 1;
+}
+.visual .slick-current dd p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 배너 화살표 */
+.visual .slick-arrow {
+  bottom: 20%;
+}
+.visual .slick-prev {
+  left: 5%;
+}
+.visual .slick-next {
+  left: calc(5% + 80px);
+}
+.visual .slick-arrow:after {
+  font-size: 26px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.visual .slick-prev:after {
+  content: "\f060";
+  font-weight: 900;
+}
+.visual .slick-next:after {
+  content: "\f061";
+  font-weight: 900;
+}
+.visual .slick-arrow:hover:after {
+  background: var(--white);
+  color: var(--main);
 }
