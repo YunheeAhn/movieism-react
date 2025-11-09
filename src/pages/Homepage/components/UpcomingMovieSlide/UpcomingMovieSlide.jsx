@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Slider from "react-slick";
 import MovieCard from "../MovieCard/MovieCard";
@@ -6,10 +6,6 @@ import { useUpcomingMoviesQuery } from "../../../../hooks/useUpcomminMovies";
 
 const UpcomingMovieSlide = () => {
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
-
-  useEffect(() => {
-    window.dispatchEvent(new Event("resize"));
-  }, [data]);
 
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;
@@ -29,8 +25,20 @@ const UpcomingMovieSlide = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
   return (
