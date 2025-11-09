@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import Slider from "react-slick";
 import MovieCard from "../MovieCard/MovieCard";
@@ -6,13 +6,10 @@ import { useTopRatedMoviesQuery } from "../../../../hooks/useTopRatedMovies";
 
 const TopRatedMovieSlide = () => {
   const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.dispatchEvent(new Event("resize"));
+  }, [data]);
 
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;
@@ -41,7 +38,7 @@ const TopRatedMovieSlide = () => {
       <h3 className="slide-title">Top Rated Movies</h3>
 
       <div className="slider-container">
-        <Slider key={windowWidth} {...settings} className="top-movie-roll">
+        <Slider {...settings} className="top-movie-roll">
           {data.results.map((movie, index) => (
             <MovieCard movie={movie} key={index} />
           ))}
