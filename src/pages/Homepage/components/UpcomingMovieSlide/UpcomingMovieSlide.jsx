@@ -21,6 +21,7 @@ const UpcomingMovieSlide = () => {
   const settings = {
     dots: false,
     infinite: true,
+    mobileFirst: true,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 1,
