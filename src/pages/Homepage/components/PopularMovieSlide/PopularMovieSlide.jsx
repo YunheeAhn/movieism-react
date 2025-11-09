@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 
 import Slider from "react-slick";
@@ -6,6 +6,10 @@ import MovieCard from "../MovieCard/MovieCard";
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
+
+  useEffect(() => {
+    window.dispatchEvent(new Event("resize"));
+  }, [data]);
 
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;

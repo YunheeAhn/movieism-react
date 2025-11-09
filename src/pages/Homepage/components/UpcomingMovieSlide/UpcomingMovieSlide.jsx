@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Slider from "react-slick";
 import MovieCard from "../MovieCard/MovieCard";
@@ -6,6 +6,10 @@ import { useUpcomingMoviesQuery } from "../../../../hooks/useUpcomminMovies";
 
 const UpcomingMovieSlide = () => {
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
+
+  useEffect(() => {
+    window.dispatchEvent(new Event("resize"));
+  }, [data]);
 
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;
