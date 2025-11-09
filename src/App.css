@@ -9,10 +9,13 @@ body {
   color: var(--white);
 }
 
-.w1560 {
+.w1700 {
   width: 100%;
   margin: 0 auto;
-  max-width: 1560px;
+  max-width: 1700px;
+
+  padding: 0 5%;
+  box-sizing: borer-box;
 }
 // 오류시 메세지
 .message {

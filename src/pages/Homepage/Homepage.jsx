@@ -6,13 +6,12 @@ import PopularMovieSlide from "./components/PopularMovieSlide/PopularMovieSlide"
 // 2. popular movie
 // 3. top rated movie
 // 4. upcoming movie
-// 5.
 
 const Homepage = () => {
   return (
     <div>
       <Banner />
-      <section className="w1560">
+      <section className="w1700">
         <PopularMovieSlide />
       </section>
     </div>
