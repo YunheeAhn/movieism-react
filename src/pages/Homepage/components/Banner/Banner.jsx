@@ -3,7 +3,7 @@ import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import "./Banner.style.css";
 
 const Banner = () => {
-  const { data, isLoading, isError } = usePopularMoviesQuery();
+  const { data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log(data);
 
   if (isLoading) {
@@ -11,7 +11,7 @@ const Banner = () => {
   }
 
   if (isError) {
-    <h1 className="message">error.message</h1>;
+    <h1 className="message">{error.message}</h1>;
   }
 
   return (
