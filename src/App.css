@@ -355,9 +355,16 @@ body {
   font-weight: 600;
 
   margin-bottom: 20px;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .card dd .genre {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
 
   margin-bottom: 16px;
