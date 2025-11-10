@@ -1,7 +1,22 @@
 import React from "react";
+import { useMovieGenreQuery } from "../../../../hooks/useMovieGenre";
 
 const MovieCard = ({ movie }) => {
   const posterImage = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`;
+
+  const { data: genreData } = useMovieGenreQuery();
+  const showGenre = (genreIdList) => {
+    if (!genreData) {
+      return [];
+    }
+
+    const genreNameList = genreIdList.map((id) => {
+      const genreObj = genreData.find((genre) => genre.id === id);
+      return genreObj.name;
+    });
+    return genreNameList;
+  };
+
   return (
     <dl className="card">
       <dt>
@@ -10,8 +25,8 @@ const MovieCard = ({ movie }) => {
       <dd>
         <h3>{movie.title}</h3>
         <div className="genre">
-          {movie.genre_ids.map((id) => (
-            <span key={id}>{id}</span>
+          {showGenre(movie.genre_ids).map((genre, index) => (
+            <span key={index}>{genre}</span>
           ))}
         </div>
 
