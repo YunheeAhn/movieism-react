@@ -25,6 +25,10 @@ const Movies = () => {
     setPage(selected + 1);
   };
   useEffect(() => {
+    setPage(1);
+  }, [keyword]);
+
+  useEffect(() => {
     if (data?.notice) {
       alert(data.notice);
     }
