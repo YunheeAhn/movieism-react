@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
 import { useSearchParams } from "react-router";
 import MovieCard from "../Homepage/components/MovieCard/MovieCard";
@@ -24,6 +24,11 @@ const Movies = () => {
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
   };
+  useEffect(() => {
+    if (data?.notice) {
+      alert(data.notice);
+    }
+  }, [data?.notice]);
 
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;
