@@ -1,2 +1,96 @@
 /* 변수 */
 @import url("/src/index.css");
+
+.movies {
+  margin-top: 70px;
+}
+.sort-movie {
+  padding: 20px 0 0 0;
+  box-sizing: border-box;
+}
+.view-movie {
+  padding: 40px 0 0 0;
+  box-sizing: border-box;
+}
+.view-movie .inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.view-movie .inner dl {
+  width: calc((100% - 90px) / 4);
+}
+
+.page-nation {
+  width: 100%;
+
+  padding: 60px 0;
+  box-sizing: border-box;
+
+  text-align: center;
+}
+.page-nation ul {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background: var(--white);
+  border-radius: var(--borderR10);
+}
+.page-nation ul li {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.page-nation ul li.selected {
+  color: Var(--white);
+  font-weight: 800;
+
+  background: var(--main);
+}
+
+/*******************************************************************************
+    @media  ~980px               
+*******************************************************************************/
+@media all and (max-width: 980px) {
+  .sort-movie {
+    padding: 16px 0 0 0;
+  }
+  .view-movie {
+    padding: 30px 0 0 0;
+  }
+  .view-movie .inner {
+    gap: 20px;
+  }
+
+  .view-movie .inner dl {
+    width: calc((100% - 40px) / 3);
+  }
+
+  .page-nation {
+    padding: 40px 0;
+  }
+}
+/*******************************************************************************
+    @media 481~680px
+*******************************************************************************/
+@media all and (max-width: 680px) {
+  .sort-movie {
+    padding: 10px 0 0 0;
+  }
+  .view-movie {
+    padding: 20px 0 0 0;
+  }
+  .view-movie .inner {
+    gap: 15px;
+  }
+
+  .view-movie .inner dl {
+    width: calc((100% - 15px) / 2);
+  }
+
+  .page-nation {
+    padding: 20px 0;
+  }
+}
