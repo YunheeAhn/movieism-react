@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router";
 import MovieCard from "../Homepage/components/MovieCard/MovieCard";
 
 import ReactPaginate from "react-paginate";
+import "./Movies.style.css";
 
 // 경로
 // 1. nav bar에서 클릭해서 온 경우 -> popular 영화 보여주기
@@ -44,11 +45,11 @@ const Movies = () => {
         <div className="page-nation">
           <ReactPaginate
             breakLabel="..."
-            nextLabel="next >"
+            nextLabel=">"
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={data?.total_pages} // 전체 페이지
-            previousLabel="< previous"
+            previousLabel="<"
             renderOnZeroPageCount={null}
             forcePage={page - 1}
           />
