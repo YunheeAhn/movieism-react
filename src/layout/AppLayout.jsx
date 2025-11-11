@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 import logo from "../assets/logo.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +9,15 @@ const AppLayout = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // keyword 입력해서 받아오기
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+  const searchByKeyword = (event) => {
+    event.preventDefault();
+
+    navigate(`/movies?q=${keyword}`);
+    setKeyword("");
+  };
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -47,10 +56,15 @@ const AppLayout = () => {
             </li>
           </ul>
 
-          <div className="search">
-            <input type="text" placeholder="Search" />
-            <button>Search</button>
-          </div>
+          <form className="search" onSubmit={searchByKeyword}>
+            <input
+              type="text"
+              placeholder="Search"
+              value={keyword}
+              onChange={(event) => setKeyword(event.target.value)}
+            />
+            <button type="submit">Search</button>
+          </form>
         </div>
       </div>
       <section className="main">
