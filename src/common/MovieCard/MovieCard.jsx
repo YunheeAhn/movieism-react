@@ -1,11 +1,15 @@
 import React from "react";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import { useNavigate } from "react-router";
+import noImage from "../../assets/noimage.png";
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
 
-  const posterImage = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`;
+  const noimage = noImage;
+  const posterImage = movie.poster_path
+    ? `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`
+    : noimage;
 
   const { data: genreData } = useMovieGenreQuery();
   const showGenre = (genreIdList) => {
