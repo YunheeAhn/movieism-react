@@ -4,6 +4,8 @@ import Review from "./component/Review/Review";
 import { useParams } from "react-router";
 import Recommend from "./component/Recommend/Recommend";
 
+import "./MovieDetail.style.css";
+
 const MovieDetail = () => {
   const { id } = useParams();
 
@@ -13,11 +15,11 @@ const MovieDetail = () => {
         <DetailCard id={id} />
       </div>
       <div className="review">
-        <h2>Reviews</h2>
+        <h2 className="sec-title">Reviews</h2>
         <Review id={id} />
       </div>
       <div className="recommend">
-        <h2>Recommend Movie</h2>
+        <h2 className="sec-title">Recommend Movie</h2>
         <Recommend id={id} />
       </div>
     </section>
