@@ -29,6 +29,7 @@
 
 /**** S : Detail-card ****/
 .detail-card {
+  position: relative;
 }
 .detail-card dl {
   display: flex;
