@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
 import { useSearchParams } from "react-router";
-import MovieCard from "../Homepage/components/MovieCard/MovieCard";
+import MovieCard from "../../common/MovieCard/MovieCard";
 
 import ReactPaginate from "react-paginate";
 import "./Movies.style.css";

@@ -1,5 +1,5 @@
 import React from "react";
-import { useMovieGenreQuery } from "../../../../hooks/useMovieGenre";
+import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import { useNavigate } from "react-router";
 
 const MovieCard = ({ movie }) => {
