@@ -33,6 +33,11 @@
   --gradient: linear-gradient(0deg, #181818, transparent 50%);
   --banner-gradient: linear-gradient(0deg, #000, transparent 50%);
 
+  --glass-background: rgba(255, 255, 255, 0.15);
+  --glass-filter: blur(2px);
+  --glass-shadow: inset 0 4px 20px rgba(255, 255, 255, 0.3);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+
   /* 폰트 */
   --kor: "Pretendard Variable", "Roboto", Malgun Gothic, "Malgun Gothic", sans-serif;
   --eng: "Roboto", "Pretendard Variable", Malgun Gothic, "Malgun Gothic", sans-serif;
