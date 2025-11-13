@@ -23,7 +23,9 @@
   right: 0;
   bottom: 0;
 
-  background: linear-gradient(to top, var(--black), transparent);
+  background: var(--banner-gradient);
+
+  z-index: 1;
 }
 .banner dt {
   width: 100vw;
