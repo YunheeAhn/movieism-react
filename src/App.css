@@ -4,6 +4,7 @@
 body {
   background: black;
   width: 100%;
+  min-width: 380px;
   height: 100vh;
 
   color: var(--white);
