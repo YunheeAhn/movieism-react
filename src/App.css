@@ -375,11 +375,19 @@ body {
   display: block;
   padding: 5px 10px;
   box-sizing: border-box;
-  border: 1px solid var(--border);
+  border-radius: var(--borderR20);
+
+  font-weight: 500;
   font-size: 14px;
   color: var(--white);
-  border-radius: var(--borderR15);
-  font-weight: 500;
+
+  /* 글래스 효과 */
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-shadow);
+  border: var(--glass-border);
+  color: var(--white);
+  /* 글래스 효과 */
 }
 .card dd .average {
   font-size: 1rem;
