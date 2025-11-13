@@ -51,9 +51,9 @@
 
   cursor: pointer;
 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 30px;
+  right: 30px;
+  /* transform: translate(-50%, -50%); */
 
   width: 60px;
   height: 60px;
@@ -74,7 +74,7 @@
   transition: all 0.3s ease;
   font-weight: 700;
 
-  transform: scale(1.1) translate(-50%, -50%);
+  transform: scale(1.1);
 }
 
 .detail-card dl dd {
@@ -232,3 +232,181 @@
   width: calc((100% - 120px) / 5);
 }
 /**** E : Recommend ****/
+
+/*******************************************************************************
+    @media  ~980px               
+*******************************************************************************/
+@media all and (max-width: 980px) {
+  /**** S : 전체 레이아웃 ****/
+
+  .movies-detail > div + div {
+    margin-top: 60px;
+  }
+  .movies-detail > div:last-of-type {
+    margin-bottom: 60px;
+  }
+  .movies-detail > div .sec-title {
+    font-size: 1.5rem;
+
+    padding: 0 0 16px 0;
+  }
+  /**** E : 전체 레이아웃 ****/
+
+  /**** S : Detail-card ****/
+
+  .detail-card dl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .detail-card dl dt {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+  .detail-card dl dt img {
+    width: 100%;
+    max-width: 300px;
+  }
+  .detail-card dl dt button {
+    top: 50%;
+    right: 50%;
+
+    transform: translate(50%, -50%);
+
+    width: 50px;
+    height: 50px;
+  }
+  .detail-card dl dt button:hover {
+    transform: translate(50%, -50%) scale(1.1);
+  }
+
+  .detail-card dl dd {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 60px;
+    box-sizing: border-box;
+  }
+  .detail-card dl dd .genre {
+    margin-bottom: 12px;
+  }
+
+  .detail-card dl dd .title {
+    font-size: 2rem;
+
+    margin-bottom: 16px;
+  }
+
+  .detail-card dl dd .overview {
+    padding: 20px 10px;
+    margin-bottom: 20px;
+  }
+
+  .detail-card dl dd .info {
+    gap: 20px;
+  }
+  .detail-card dl dd .info div {
+    padding-left: 120px;
+  }
+  .detail-card dl dd .info div span {
+    width: 100px;
+    height: 32px;
+
+    font-size: 14px;
+  }
+  /**** E : Detail-card ****/
+
+  /**** S : Review ****/
+
+  .review .review-wrap dl {
+    padding: 16px;
+  }
+  .review .review-wrap dl + dl {
+    margin-top: 12px;
+  }
+  .review .review-wrap dl dt {
+    font-size: 1.105rem;
+  }
+
+  .review .review-wrap dl dd button {
+    width: 100px;
+    right: 26px;
+    top: 14px;
+    transition: all 0.3s ease;
+  }
+
+  /**** E : Review ****/
+
+  /**** S : Recommend ****/
+  .recommend .recommend-wrap {
+    gap: 20px;
+  }
+  .recommend .recommend-wrap dl {
+    width: calc((100% - 60px) / 4);
+  }
+  /**** E : Recommend ****/
+}
+
+/*******************************************************************************
+    @media  ~680px               
+*******************************************************************************/
+@media all and (max-width: 680px) {
+  /**** S : 전체 레이아웃 ****/
+
+  .movies-detail > div + div {
+    margin-top: 40px;
+  }
+  .movies-detail > div:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  /**** E : 전체 레이아웃 ****/
+
+  /**** S : Detail-card ****/
+
+  .detail-card dl dd {
+    padding-top: 40px;
+  }
+
+  .detail-card dl dd .title {
+    font-size: 1.8rem;
+
+    margin-bottom: 16px;
+  }
+
+  .detail-card dl dd .overview {
+    padding: 16px 10px;
+    margin-bottom: 16px;
+  }
+
+  .detail-card dl dd .info {
+    gap: 20px;
+  }
+  .detail-card dl dd .info div {
+    padding-left: 100px;
+  }
+  .detail-card dl dd .info div span {
+    width: 80px;
+    height: 32px;
+  }
+  /**** E : Detail-card ****/
+
+  /**** S : Review ****/
+
+  .review .review-wrap dl dd button {
+    width: 100px;
+    right: 26px;
+    top: 10px;
+  }
+
+  /**** E : Review ****/
+
+  /**** S : Recommend ****/
+
+  .recommend .recommend-wrap dl {
+    width: calc((100% - 20px) / 2);
+  }
+  /**** E : Recommend ****/
+}
