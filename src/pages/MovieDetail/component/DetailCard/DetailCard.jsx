@@ -1,14 +1,16 @@
-import React from "react";
-import { useParams } from "react-router";
+import React, { useState } from "react";
 import { useMovieDetailQuery } from "../../../../hooks/useMovieDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import ModalYoutube from "../../../../common/ModalYoutube/ModalYoutube";
 
-const DetailCard = () => {
-  const { id } = useParams();
+const DetailCard = ({ id }) => {
   const { data, isLoading, isError, error } = useMovieDetailQuery(id);
 
+  const [openModal, setOpenModal] = useState(false);
+
   console.log("detailpage", data);
+
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;
   }
@@ -16,57 +18,62 @@ const DetailCard = () => {
   if (isError) {
     return <h1 className="message">{error.message}</h1>;
   }
-
   return (
-    <dl>
-      <dt>
-        <img
-          src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${data.data.poster_path}`}
-          alt={data.data.title}
-        />
-      </dt>
-      <dd>
-        <div className="genre">
-          {data?.data.genres.map((genre, index) => (
-            <span className="tag" key={index}>
-              {genre.name}
-            </span>
-          ))}
-        </div>
-        <h3 className="title">{data.data.title}</h3>
-        <div className="overview">
-          <p>{data.data.overview}</p>
-        </div>
-        <div className="info">
-          <div className="release">
-            <span className="tag">Release</span>
-            {data.data.release_date}
+    <>
+      <dl>
+        <dt>
+          <img
+            src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${data.data.poster_path}`}
+            alt={data.data.title}
+          />
+
+          <button
+            className="play-youtube"
+            onClick={() => setOpenModal(true)}
+            aria-label="Play Trailer"
+          >
+            <FontAwesomeIcon icon={faPlay} /> Trailer
+          </button>
+        </dt>
+        <dd>
+          <div className="genre">
+            {data?.data.genres.map((genre, index) => (
+              <span className="tag" key={index}>
+                {genre.name}
+              </span>
+            ))}
           </div>
-          <div className="run-time">
-            <span className="tag">Run Time</span>
-            {data.data.runtime}m
+          <h3 className="title">{data.data.title}</h3>
+          <div className="overview">
+            <p>{data.data.overview}</p>
           </div>
-          <div className="popular">
-            <span className="tag">Popularity</span>
-            {data.data.popularity}
+          <div className="info">
+            <div className="release">
+              <span className="tag">Release</span>
+              {data.data.release_date}
+            </div>
+            <div className="run-time">
+              <span className="tag">Run Time</span>
+              {data.data.runtime}m
+            </div>
+            <div className="popular">
+              <span className="tag">Popularity</span>
+              {data.data.popularity}
+            </div>
+            <div className="budget">
+              <span className="tag">Budget</span>
+              {data.data.budget
+                ? new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(
+                    data.data.budget
+                  )
+                : "N/A"}
+            </div>
           </div>
-          <div className="budget">
-            <span className="tag">Budget</span>
-            {data.data.budget
-              ? new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(
-                  data.data.budget
-                )
-              : "N/A"}
-          </div>
-        </div>
-        <button>
-          <i>
-            <FontAwesomeIcon icon={faPlay} />
-          </i>
-          Trailer
-        </button>
-      </dd>
-    </dl>
+        </dd>
+      </dl>
+
+      <ModalYoutube id={data.data.id} show={openModal} onHide={() => setOpenModal(false)} />
+    </>
   );
 };
 
