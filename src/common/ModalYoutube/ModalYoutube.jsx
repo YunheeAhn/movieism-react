@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import YouTube from "react-youtube";
 import { useModalYoutubeQuery } from "../../hooks/useModalYoutube";
+import "./ModalYoutube.style.css";
 
 const ModalYoutube = ({ id, show, onHide }) => {
   const { data, isLoading, isError, error } = useModalYoutubeQuery(id);
