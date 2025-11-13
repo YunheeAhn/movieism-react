@@ -1,2 +1,234 @@
 /* 변수 */
 @import url("/src/index.css");
+
+/**** S : 전체 레이아웃 ****/
+.movies-detail {
+  margin-top: 70px;
+
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+.movies-detail > div + div {
+  margin-top: 80px;
+}
+.movies-detail > div:last-of-type {
+  margin-bottom: 80px;
+}
+.movies-detail > div .sec-title {
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  line-height: 120%;
+  font-weight: 800;
+
+  color: var(--white);
+
+  padding: 0 0 20px 0;
+  box-sizing: border-box;
+}
+/**** E : 전체 레이아웃 ****/
+
+/**** S : Detail-card ****/
+.detail-card {
+}
+.detail-card dl {
+  display: flex;
+  justify-content: center;
+}
+.detail-card dl dt {
+  width: 300px;
+  border-radius: var(--borderR20);
+  overflow: hidden;
+
+  position: relative;
+}
+.detail-card dl dt img {
+  width: 100%;
+  border-radius: var(--borderR20);
+  height: auto;
+}
+.detail-card dl dt button {
+  position: absolute;
+
+  cursor: pointer;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+
+  transition: all 0.3s ease;
+
+  /* 글래스 효과 */
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-shadow);
+  border: var(--glass-border);
+  color: var(--white);
+  /* 글래스 효과 */
+}
+.detail-card dl dt button:hover {
+  border-color: var(--white);
+  transition: all 0.3s ease;
+  font-weight: 700;
+
+  transform: scale(1.1) translate(-50%, -50%);
+}
+
+.detail-card dl dd {
+  width: calc(60% - 380px);
+  padding-left: 80px;
+}
+.detail-card dl dd .genre {
+  display: flex;
+  gap: 5px;
+
+  margin-bottom: 16px;
+}
+.detail-card dl dd .genre span {
+  display: inline-block;
+  padding: 6px 16px;
+  box-sizing: border-box;
+  border-radius: var(--borderR20);
+
+  /* 글래스 효과 */
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-shadow);
+  border: var(--glass-border);
+  color: var(--white);
+  /* 글래스 효과 */
+
+  font-size: 14px;
+  font-weight: 600;
+}
+.detail-card dl dd .title {
+  font-size: 2.4rem;
+  letter-spacing: 0 !important;
+  color: var(--white);
+
+  margin-bottom: 20px;
+}
+
+.detail-card dl dd .overview {
+  padding: 24px 10px;
+  box-sizing: border-box;
+
+  border: 2px solid var(--orange-light);
+  border-left: 0;
+  border-right: 0;
+
+  margin-bottom: 26px;
+
+  color: var(--white);
+}
+
+.detail-card dl dd .info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.detail-card dl dd .info div {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: var(--white);
+
+  padding-left: 130px;
+}
+.detail-card dl dd .info div span {
+  width: 110px;
+  height: 36px;
+  border-radius: var(--borderR20);
+  background: transparent;
+  border: 1px solid var(--border);
+
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  left: 0;
+}
+/**** E : Detail-card ****/
+
+/**** S : Review ****/
+.review {
+}
+.review .review-wrap .message {
+  margin: 0 auto;
+  color: var(--white);
+  font-size: 1rem;
+}
+.review .review-wrap dl {
+  border: 1px solid var(--border);
+  border-radius: var(--borderR20);
+  padding: 20px;
+  box-sizing: border-box;
+
+  position: relative;
+}
+.review .review-wrap dl + dl {
+  margin-top: 16px;
+}
+.review .review-wrap dl dt {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.review .review-wrap dl dd {
+  color: var(--white);
+  font-size: 1rem;
+}
+.review .review-wrap dl dd p {
+  color: var(--border2);
+
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+.review .review-wrap dl dd button {
+  width: 120px;
+
+  cursor: pointer;
+
+  position: absolute;
+  right: 26px;
+  top: 20px;
+
+  border: none;
+  background: none;
+  border-bottom: 1px solid var(--border);
+
+  padding: 5px;
+  box-sizing: border-box;
+
+  color: var(--white);
+
+  transition: all 0.3s ease;
+}
+.review .review-wrap dl dd button:hover {
+  color: var(--main);
+  transition: all 0.3s ease;
+  border-color: var(--main);
+}
+/**** E : Review ****/
+
+/**** S : Recommend ****/
+.recommend .recommend-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.recommend .recommend-wrap dl {
+  width: calc((100% - 120px) / 5);
+}
+/**** E : Recommend ****/
