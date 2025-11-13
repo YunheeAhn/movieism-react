@@ -2,6 +2,7 @@ import React from "react";
 import DetailCard from "./component/DetailCard/DetailCard";
 import Review from "./component/Review/Review";
 import { useParams } from "react-router";
+import Recommend from "./component/Recommend/Recommend";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -15,7 +16,10 @@ const MovieDetail = () => {
         <h2>Reviews</h2>
         <Review id={id} />
       </div>
-      <div className="recommend"></div>
+      <div className="recommend">
+        <h2>Recommend Movie</h2>
+        <Recommend id={id} />
+      </div>
     </section>
   );
 };
