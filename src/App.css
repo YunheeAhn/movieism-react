@@ -57,7 +57,9 @@ body {
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
   z-index: 99999;
 }
-
+.header .logo {
+  cursor: pointer;
+}
 .header .logo img {
   width: 120px;
   height: auto;
