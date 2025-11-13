@@ -3,6 +3,7 @@ import { useMovieDetailQuery } from "../../../../hooks/useMovieDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import ModalYoutube from "../../../../common/ModalYoutube/ModalYoutube";
+import noImage from "../../../../assets/noimage.png";
 
 const DetailCard = ({ id }) => {
   const { data, isLoading, isError, error } = useMovieDetailQuery(id);
@@ -11,6 +12,11 @@ const DetailCard = ({ id }) => {
 
   console.log("detailpage", data);
 
+  const movie = data?.data || {};
+
+  const posterImage = movie.poster_path
+    ? `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`
+    : noImage;
   if (isLoading) {
     return <h1 className="message">Loading...</h1>;
   }
@@ -22,10 +28,7 @@ const DetailCard = ({ id }) => {
     <>
       <dl>
         <dt>
-          <img
-            src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${data.data.poster_path}`}
-            alt={data.data.title}
-          />
+          <img src={posterImage} alt={data.data.title} />
 
           <button
             className="play-youtube"
