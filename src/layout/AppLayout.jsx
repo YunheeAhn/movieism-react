@@ -38,7 +38,7 @@ const AppLayout = () => {
   return (
     <div className="wrapper">
       <div className={`header ${isScrolled ? "scrolled" : ""}`}>
-        <div className="logo">
+        <div className="logo" onClick={() => navigate("/")}>
           <img src={logo} alt="MOVIEISM" />
         </div>
 
