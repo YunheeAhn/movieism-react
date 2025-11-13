@@ -306,6 +306,8 @@ body {
 .card {
   transition: all 0.3s ease;
   position: relative;
+
+  cursor: pointer;
 }
 .card dt {
   width: 100%;
