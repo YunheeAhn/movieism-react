@@ -33,7 +33,7 @@ const DetailCard = () => {
             </span>
           ))}
         </div>
-        <h3 className="title">{data.data.title} : Watch Now!</h3>
+        <h3 className="title">{data.data.title}</h3>
         <div className="overview">
           <p>{data.data.overview}</p>
         </div>
@@ -52,7 +52,11 @@ const DetailCard = () => {
           </div>
           <div className="budget">
             <span className="tag">Budget</span>
-            {data.data.budget}
+            {data.data.budget
+              ? new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(
+                  data.data.budget
+                )
+              : "N/A"}
           </div>
         </div>
         <button>
