@@ -6,7 +6,7 @@
   --basic: #444;
   --LightFont: #777;
 
-  --black: #222;
+  --black: #181818;
 
   --main: #e50914;
   --sub: #b20710;
@@ -29,6 +29,9 @@
   --borderR10: 10px;
   --borderR15: 15px;
   --borderR20: 20px;
+
+  --gradient: linear-gradient(0deg, #181818, transparent 50%);
+  --banner-gradient: linear-gradient(0deg, #000, transparent 50%);
 
   /* 폰트 */
   --kor: "Pretendard Variable", "Roboto", Malgun Gothic, "Malgun Gothic", sans-serif;
