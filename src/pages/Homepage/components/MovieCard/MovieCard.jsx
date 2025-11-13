@@ -1,7 +1,10 @@
 import React from "react";
 import { useMovieGenreQuery } from "../../../../hooks/useMovieGenre";
+import { useNavigate } from "react-router";
 
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
+
   const posterImage = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`;
 
   const { data: genreData } = useMovieGenreQuery();
@@ -18,7 +21,7 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
-    <dl className="card">
+    <dl className="card" onClick={() => navigate(`/movies/${movie.id}`)}>
       <dt>
         <img src={posterImage} alt={movie.title} />
       </dt>
