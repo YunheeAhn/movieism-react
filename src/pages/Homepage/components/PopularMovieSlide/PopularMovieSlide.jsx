@@ -3,8 +3,7 @@ import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-
-import MovieCard from "../MovieCard/MovieCard";
+import MovieCard from "../../../../common/MovieCard/MovieCard";
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();

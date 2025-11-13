@@ -3,8 +3,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
-import MovieCard from "../MovieCard/MovieCard";
 import { useTopRatedMoviesQuery } from "../../../../hooks/useTopRatedMovies";
+import MovieCard from "../../../../common/MovieCard/MovieCard";
 
 const TopRatedMovieSlide = () => {
   const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
