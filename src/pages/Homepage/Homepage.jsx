@@ -6,6 +6,7 @@ import TopRatedMovieSlide from "./components/TopRatedMovieSlide/TopRatedMovieSli
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { responsive } from "../../constants/responsive";
 
 // 1. 배너 생성 => popular 영화의 첫번째 아이템
 // 2. popular movie
@@ -20,9 +21,9 @@ const Homepage = () => {
     <div>
       <Banner />
       <section className="w1700">
-        <UpcomingMovieSlide data-aos="fade-up" data-aos-delay="300" />
-        <TopRatedMovieSlide data-aos="fade-up" data-aos-delay="600" />
-        <PopularMovieSlide data-aos="fade-up" data-aos-delay="900" />
+        <UpcomingMovieSlide data-aos="fade-up" data-aos-delay="300" responsive={responsive} />
+        <TopRatedMovieSlide data-aos="fade-up" data-aos-delay="600" responsive={responsive} />
+        <PopularMovieSlide data-aos="fade-up" data-aos-delay="900" responsive={responsive} />
       </section>
     </div>
   );
