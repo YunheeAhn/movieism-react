@@ -1,23 +1,17 @@
 import React from "react";
-import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
-
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import MovieCard from "../../../../common/MovieCard/MovieCard";
+import ErrorMessage from "../../../../common/ErrorMessage";
 
 const PopularMovieSlide = ({ responsive }) => {
-  const { data, isLoading, isError, error } = usePopularMoviesQuery();
-
-  if (isLoading) {
-    return <h1 className="message">Loading...</h1>;
-  }
+  const { data, isError, error } = usePopularMoviesQuery();
 
   if (isError) {
-    return <h1 className="message">{error.message}</h1>;
+    return <ErrorMessage error={error} />;
   }
   if (!data?.results?.length) {
     return <h1 className="message">No popular movies found.</h1>;

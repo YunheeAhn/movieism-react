@@ -4,13 +4,16 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 import YouTube from "react-youtube";
 import { useModalYoutubeQuery } from "../../hooks/useModalYoutube";
 import "./ModalYoutube.style.css";
+import ErrorMessage from "../ErrorMessage";
 
 const ModalYoutube = ({ id, show, onHide }) => {
-  const { data, isLoading, isError, error } = useModalYoutubeQuery(id);
+  const { data, isError, error } = useModalYoutubeQuery(id);
 
   if (!show) return null;
-  if (isLoading) return <h1 className="message">Loading...</h1>;
-  if (isError) return <h1 className="message">{error?.message || "Error occurred"}</h1>;
+
+  if (isError) {
+    return <ErrorMessage error={error} />;
+  }
 
   const results = data?.data?.results || [];
 

@@ -1,24 +1,19 @@
 import React from "react";
 
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import { useUpcomingMoviesQuery } from "../../../../hooks/useUpcomingMovies";
 import MovieCard from "../../../../common/MovieCard/MovieCard";
+import ErrorMessage from "../../../../common/ErrorMessage";
 
 const UpcomingMovieSlide = ({ responsive }) => {
-  const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
-
-  if (isLoading) {
-    return <h1 className="message">Loading...</h1>;
-  }
+  const { data, isError, error } = useUpcomingMoviesQuery();
 
   if (isError) {
-    return <h1 className="message">{error.message}</h1>;
+    return <ErrorMessage error={error} />;
   }
+
   if (!data?.results?.length) {
     return <h1 className="message">No Upcoming movies found.</h1>;
   }
