@@ -9,6 +9,7 @@ export const useModalYoutubeQuery = (id) => {
   return useQuery({
     queryKey: ["modalYoutube", id],
     queryFn: () => fetchModalYoutube(id),
+    suspense: true,
     enabled: !!id, // id가 있을 때만 실행
   });
 };
