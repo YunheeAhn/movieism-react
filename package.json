@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "axios": "^1.13.2",
     "react": "^19.1.1",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",
     "react-multi-carousel": "^2.8.6",
     "react-paginate": "^8.3.0",
