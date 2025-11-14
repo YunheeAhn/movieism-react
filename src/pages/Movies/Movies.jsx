@@ -78,7 +78,7 @@ const Movies = () => {
             previousLabel="<"
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
-            pageCount={data?.total_pages}
+            pageCount={Math.min(data.total_pages, 500)}
             forcePage={page - 1}
             renderOnZeroPageCount={null}
           />
