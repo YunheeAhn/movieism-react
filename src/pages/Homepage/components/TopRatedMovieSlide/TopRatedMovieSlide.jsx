@@ -23,24 +23,21 @@ const TopRatedMovieSlide = () => {
   const settings = {
     dots: false,
     infinite: true,
-    mobileFirst: true,
+    mobileFirst: false,
     speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
+    slidesToShow: 4,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
+        breakpoint: 1024, // 1024 이하
+        settings: { slidesToShow: 3 },
       },
       {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
+        breakpoint: 768, // 768 이하
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 680, // 680 이하
+        settings: { slidesToShow: 1, centerMode: true },
       },
     ],
   };
