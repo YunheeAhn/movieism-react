@@ -1,16 +1,17 @@
 import React from "react";
 import { useRecommendMoviesQuery } from "../../../../hooks/useRecommendMovies";
 import MovieCard from "../../../../common/MovieCard/MovieCard";
+import LoadingSpinner from "../../../../common/LoadingSpinner/LoadingSpinner";
+import ErrorMessage from "../../../../common/ErrorMessage";
 
 const Recommend = ({ id }) => {
   const { data, isLoading, isError, error } = useRecommendMoviesQuery(id);
 
   if (isLoading) {
-    return <h1 className="message">Loading...</h1>;
+    return <LoadingSpinner />;
   }
-
   if (isError) {
-    return <h1 className="message">{error.message}</h1>;
+    return <ErrorMessage error={error} />;
   }
 
   return (

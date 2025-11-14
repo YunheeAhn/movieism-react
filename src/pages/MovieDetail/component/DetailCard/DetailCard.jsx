@@ -4,26 +4,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import ModalYoutube from "../../../../common/ModalYoutube/ModalYoutube";
 import noImage from "../../../../assets/noimage.png";
+import LoadingSpinner from "../../../../common/LoadingSpinner/LoadingSpinner";
+import ErrorMessage from "../../../../common/ErrorMessage";
 
 const DetailCard = ({ id }) => {
   const { data, isLoading, isError, error } = useMovieDetailQuery(id);
 
   const [openModal, setOpenModal] = useState(false);
 
-  console.log("detailpage", data);
-
   const movie = data?.data || {};
 
   const posterImage = movie.poster_path
     ? `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`
     : noImage;
+
   if (isLoading) {
-    return <h1 className="message">Loading...</h1>;
+    return <LoadingSpinner />;
+  }
+  if (isError) {
+    return <ErrorMessage error={error} />;
   }
 
-  if (isError) {
-    return <h1 className="message">{error.message}</h1>;
-  }
   return (
     <>
       <dl>

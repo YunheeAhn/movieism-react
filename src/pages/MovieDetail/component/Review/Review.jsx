@@ -1,17 +1,18 @@
 // Review.jsx
 import React, { useState } from "react";
 import { useMovieReviewsQuery } from "../../../../hooks/useMovieReviews";
+import LoadingSpinner from "../../../../common/LoadingSpinner/LoadingSpinner";
+import ErrorMessage from "../../../../common/ErrorMessage";
 
 const Review = ({ id }) => {
   const { data: response, isLoading, isError, error } = useMovieReviewsQuery(id);
 
   const [openContent, SetOpenContent] = useState(null);
   if (isLoading) {
-    return <h1 className="message">Loading...</h1>;
+    return <LoadingSpinner />;
   }
-
   if (isError) {
-    return <h1 className="message">{error.response?.data?.status_message || String(error)}</h1>;
+    return <ErrorMessage error={error} />;
   }
 
   const reviews = response?.data?.results ?? [];

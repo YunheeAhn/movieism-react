@@ -3,17 +3,18 @@ import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import "./Banner.style.css";
 
 import Slider from "react-slick";
+import LoadingSpinner from "../../../../common/LoadingSpinner/LoadingSpinner";
+import ErrorMessage from "../../../../common/ErrorMessage";
 
 const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log(data);
 
   if (isLoading) {
-    return <h1 className="message">Loading...</h1>;
+    return <LoadingSpinner />;
   }
-
   if (isError) {
-    return <h1 className="message">{error.message}</h1>;
+    return <ErrorMessage error={error} />;
   }
 
   const bannerImages = data.results.slice(0, 3).map((movie) => ({

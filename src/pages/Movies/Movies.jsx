@@ -5,6 +5,8 @@ import MovieCard from "../../common/MovieCard/MovieCard";
 import ReactPaginate from "react-paginate";
 import Sort from "./component/Sort";
 import "./Movies.style.css";
+import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
+import ErrorMessage from "../../common/ErrorMessage";
 
 // 경로
 // 1. nav bar에서 클릭해서 온 경우 -> popular 영화 보여주기
@@ -55,8 +57,12 @@ const Movies = () => {
     if (data?.notice) alert(data.notice);
   }, [data?.notice]);
 
-  if (isLoading) return <h1 className="message">Loading...</h1>;
-  if (isError) return <h1 className="message">{error.message}</h1>;
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+  if (isError) {
+    return <ErrorMessage error={error} />;
+  }
 
   return (
     <section className="movies w1700">
