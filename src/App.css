@@ -182,15 +182,13 @@ body {
   outline: 0 !important;
 }
 .slick-track {
-  display: flex;
+  display: flex !important;
 }
 .slick-slide {
   border: 0;
   outline: 0 !important;
 }
-.slick-slide > div {
-  display: contents;
-}
+
 .slick-initialized .slick-slide {
   display: block;
   outline: 0 !important;
@@ -255,6 +253,9 @@ body {
   line-height: 120%;
 
   margin-bottom: 20px;
+}
+.slider-container {
+  width: 100%;
 }
 .slide-section .slick-list {
   margin-left: -30px;
