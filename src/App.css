@@ -458,7 +458,7 @@ body {
     border-radius: var(--borderR20);
   }
   .slide-section .card dd .genre {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     gap: 3px;
   }
   .slide-section .card dd .genre span {
@@ -479,18 +479,22 @@ body {
   /**** S : 영화 카드 컴포넌트 ****/
 
   .card dd {
-    padding: 16px;
+    padding: 12px;
   }
   .card dd h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
 
-    margin-bottom: 16px;
-  }
-  .card dd .genre {
     margin-bottom: 12px;
   }
+  .card dd .genre {
+    margin-bottom: 8px;
+  }
+  .card dd .genre span {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
   .card dd .adult {
-    margin-top: 20px;
+    margin-top: 16px;
   }
   /**** E : 영화 카드 컴포넌트 ****/
 }
