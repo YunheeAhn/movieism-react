@@ -226,15 +226,6 @@ body {
   font-size: 18px;
   font-family: var(--icon);
 }
-.slick-prev {
-}
-.slick-next {
-}
-.slick-prev:after {
-}
-.slick-next:after {
-}
-
 /***** E : 슬릭기본 *****/
 
 /***** S : 메인 영화 슬라이더 *****/
@@ -465,6 +456,22 @@ body {
   .slide-section .card {
     margin-left: 20px;
     border-radius: var(--borderR20);
+  }
+  .slide-section .card dd .genre {
+    margin-bottom: 6px;
+    gap: 3px;
+  }
+  .slide-section .card dd .genre span {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
+  .slide-section .card dd .adult {
+    margin-top: 16px;
+  }
+  .slide-section .card dd h3 {
+    font-size: 1rem;
+
+    margin-bottom: 12px;
   }
 
   /***** E : 메인 영화 슬라이더 *****/
