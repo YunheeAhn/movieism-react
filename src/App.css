@@ -187,6 +187,7 @@ body {
 .slick-slide {
   border: 0;
   outline: 0 !important;
+  flex-shrink: 0; /* iOS 필수 */
 }
 
 .slick-initialized .slick-slide {
@@ -244,6 +245,7 @@ body {
 .slide-section {
   padding: 80px 0 0;
   box-sizing: border-box;
+  width: 100%;
 }
 .slide-title {
   font-size: 2.6rem;
@@ -254,12 +256,6 @@ body {
 
   margin-bottom: 20px;
 }
-.slider-container {
-  width: 100%;
-}
-.slide-section .slick-list {
-  margin-left: -30px;
-}
 .slide-section .card {
   margin-left: 30px;
   border-radius: var(--borderR20);
@@ -267,41 +263,7 @@ body {
   position: relative;
   z-index: 10;
 }
-.slide-section .slick-arrow {
-  top: -60px;
 
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
-
-  background: rgba(255, 255, 255, 0.2);
-
-  transition: all 0.3s ease;
-}
-.slide-section .slick-prev {
-  right: calc(0% + 45px);
-}
-.slide-section .slick-next {
-  right: 0%;
-}
-.slide-section .slick-prev:after {
-  content: "\f060";
-  transition: all 0.3s ease;
-  font-weight: 900;
-}
-.slide-section .slick-next:after {
-  transition: all 0.3s ease;
-  content: "\f061";
-  font-weight: 900;
-}
-
-.slide-section .slick-arrow:hover {
-  background: var(--white);
-}
-
-.slide-section .slick-arrow:hover:after {
-  color: var(--main);
-}
 /***** E : 메인 영화 슬라이더 *****/
 
 /**** S : 영화 카드 컴포넌트 ****/
@@ -499,25 +461,12 @@ body {
   .slide-title {
     font-size: 2.2rem;
   }
-  .slide-section .slick-list {
-    margin-left: -20px;
-  }
+
   .slide-section .card {
     margin-left: 20px;
     border-radius: var(--borderR20);
   }
-  .slide-section .slick-arrow {
-    top: -60px;
 
-    width: 32px;
-    height: 32px;
-  }
-  .slide-section .slick-arrow:after {
-    font-size: 1rem;
-  }
-  .slide-section .slick-prev {
-    right: calc(0% + 40px);
-  }
   /***** E : 메인 영화 슬라이더 *****/
 
   /**** S : 영화 카드 컴포넌트 ****/
